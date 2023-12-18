@@ -11,7 +11,7 @@ if (futbol != "no") {
     if (seguir == 'esc') {
       seguir = 'salir';
     } else if (seguir == 'reiniciar'){
-      seguir = funcCamiseta()
+    continue
     } else {
       alert(seguir)
     }
@@ -19,7 +19,7 @@ if (futbol != "no") {
 }
 
 function funcCamiseta() {
-    let posicion = prompt('Ingresa tu posición, "esc" para salir')
+    let posicion = prompt('Ingresa tu posición, "esc" para salir').toLowerCase();
     
     if (posicion == "arquero") {
       return `Buena elección, entonces usaras la #1`
@@ -43,6 +43,8 @@ function funcCamiseta() {
       return `Buena elección, entonces usaras la #10`
     }else if (posicion == "volante izquierdo") {
       return `Buena elección, entonces usaras la #11`
+    }else if (posicion == "esc") {
+      return `esc`
     } else {
       alert('Esa posición no existe')
       return 'reiniciar'
