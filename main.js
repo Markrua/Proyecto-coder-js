@@ -1,66 +1,51 @@
 //Pagina de Futbol
-function ingresarPosicion() {
-    posicion = prompt("¿Quieres ingresar otra posición?, 'esc'").toLowerCase()
-}
+
 let futbol = prompt("¿Te gusta el futbol?").toLowerCase();
 
 if (futbol != "no") {
   alert("Genial, descubre tu numero según la posicion que juegas");
-
-  let posicion = prompt("¿En un 4-1-2-1-2 De que juegas?").toLowerCase();
-  while (posicion != "esc") {
-    switch (posicion) {
-      case "arquero":
-        alert(`Buena elección, entonces usaras la #1`);
-        ingresarPosicion()
-        break;
-      case "central derecho":
-        alert(`Buena elección, entonces usaras la #2`);
-        ingresarPosicion()
-        break;
-      case "lateral izquierdo":
-        alert(`Buena elección, entonces usaras la #3`);
-        ingresarPosicion()
-        break;
-      case "lateral derecho":
-        alert(`Buena elección, entonces usaras la #4`);
-        ingresarPosicion()
-        break;
-      case "volante central defensivo":
-        alert(`Buena elección, entonces usaras la #5`);
-        ingresarPosicion()
-        break;
-      case "central izquierdo":
-        alert(`Buena elección, entonces usaras la #6`);
-        ingresarPosicion()
-        break;
-      case "delantero derecho":
-        alert(`Buena elección, entonces usaras la #7`);
-        ingresarPosicion()
-        break;
-      case "volante derecho":
-        alert(`Buena elección, entonces usaras la #8`);
-        ingresarPosicion()
-        break;
-      case "delantero izquierdo":
-        alert(`Buena elección, entonces usaras la #9`);
-        ingresarPosicion()
-        break;
-      case "volante ofensivo":
-        alert(`Buena elección, entonces usaras la #10`);
-        ingresarPosicion()
-        break;
-      case "volante izquierdo":
-        alert(`Buena elección, entonces usaras la #11`);
-        ingresarPosicion()
-        break;
-
-      default:
-        alert("No existe esa posicion");
-        ingresarPosicion()
-        break;
+  alert("¿En un 4-1-2-1-2 De que juegas?")
+  seguir = '';
+  while (seguir != 'salir') {
+    seguir = funcCamiseta()
+    if (seguir == 'esc') {
+      seguir = 'salir';
+    } else if (seguir == 'reiniciar'){
+      seguir = funcCamiseta()
+    } else {
+      alert(seguir)
     }
   }
-} else {
-  alert("Esta bien, ¡Nos vemos!");
 }
+
+function funcCamiseta() {
+    let posicion = prompt('Ingresa tu posición, "esc" para salir')
+    
+    if (posicion == "arquero") {
+      return `Buena elección, entonces usaras la #1`
+    } else if (posicion == "central derecho") {
+      return 'Buena elección, entonces usaras la #2'
+    } else if (posicion == "lateral izquierdo") {
+      return 'Buena elección, entonces usaras la #3'
+    } else if (posicion == "lateral derecho") {
+      return `Buena elección, entonces usaras la #4`
+    } else if (posicion == "volante central defensivo") {
+      return `Buena elección, entonces usaras la #5`
+    }else if (posicion == "central izquierdo") {
+      return `Buena elección, entonces usaras la #6`
+    }else if (posicion == "delantero derecho") {
+      return `Buena elección, entonces usaras la #7`
+    }else if (posicion == "volante derecho") {
+      return `Buena elección, entonces usaras la #8`
+    }else if (posicion == "delantero izquierdo") {
+      return `Buena elección, entonces usaras la #9`
+    }else if (posicion == "volante ofensivo") {
+      return `Buena elección, entonces usaras la #10`
+    }else if (posicion == "volante izquierdo") {
+      return `Buena elección, entonces usaras la #11`
+    } else {
+      alert('Esa posición no existe')
+      return 'reiniciar'
+    }
+}
+
